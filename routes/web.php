@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArticleController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,3 +24,6 @@ Route::get('/', function () {
 // });
 
 Route::view('/welcome', 'welcome');
+
+// Route::get('/article',[ArticleController::class, 'index']);
+Route::resource('/article',ArticleController::class);
