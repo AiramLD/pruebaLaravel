@@ -5,7 +5,6 @@ namespace Database\Seeders;
 use App\Models\Article;
 use Illuminate\Database\Seeder;
 
-
 class ArticleSeeder extends Seeder
 {
     /**
@@ -13,41 +12,39 @@ class ArticleSeeder extends Seeder
      */
     public function run(): void
     {
-
         $articles = [
             [
                 'name' => 'Ron Zacapa',
                 'price' => 59.90,
                 'stock' => 1,
-                'created_at' => now(),
-                'updated_at' => now()   
+                'created_at' => date('Y-m-d H:m:s'),
+                'updated_at' => date('Y-m-d H:m:s'),
             ],
             [
-                'name' => 'Cardhun Zacapa',
-                'price' => 35.90,
-                'stock' => 5,
-                'created_at' => now(),
-                'updated_at' => now()   
-                      
+                'name' => 'Cardhú',
+                'price' => 45.20,
+                'stock' => 3,
+                'created_at' => date('Y-m-d H:m:s'),
+                'updated_at' => date('Y-m-d H:m:s'),
             ],
             [
-                'name' => 'Ramon Bilbao',
-                'price' => 19.90,
+                'name' => 'Ramón Bilbao',
+                'price' => 16.55,
                 'stock' => 22,
-                'created_at' => now(),
-                'updated_at' => now()       
+                'created_at' => date('Y-m-d H:m:s'),
+                'updated_at' => date('Y-m-d H:m:s'),
             ],
             [
                 'name' => 'Victoria',
-                'price' => 9.90,
-                'stock' => 1,
-                'created_at' => now(),
-                'updated_at' => now()        
-            ]
+                'price' => 1.25,
+                'stock' => 56,
+                'created_at' => date('Y-m-d H:m:s'),
+                'updated_at' => date('Y-m-d H:m:s'),
+            ],
 
         ];
 
-        //DB::table('articles')->insert($articles); ESTO SOLO CON DEPENDENCIAS
-            Article::insert($articles);
-        }
+        //DB::table('articles')->insert($articles);
+        Article::insert($articles);
     }
+}

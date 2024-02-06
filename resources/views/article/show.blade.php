@@ -1,15 +1,18 @@
 @extends('layouts.master')
 
 @section('content')
-
-    <h1>List of Articles</h1>
-    <h2>{{ $article->id }}</h2>
-    <h2> {{ $article->name }}</h2>
-    <h3> {{ $article->price }}</h3>
-    @if ($article->stock)
-        <h4> Hay stock de {{ $article->stock }} unidades</h4>
-    @else
-        <h4> No hay stock</h4>
-    @endif
+<h1>Mostrando el Articulo {{$article->id}}</h1>
+<h2>{{$article->name}}</h2>
+<h3>{{$article->price}}€</h3>
+<form action="{{route('article.destroy', $article)}}" method="POST">
+    @csrf
+    @method('DELETE')
+    <input type="submit" value="Eliminar articulo" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+</form>
+@if($article->stock)
+<h4>Hay {{$article->stock}} unidades</h4>
+@else
+<h4>Producto agotado</h4>
+@endif
 
 @endsection
