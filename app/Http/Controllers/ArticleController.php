@@ -74,7 +74,7 @@ class ArticleController extends Controller
         $article->save();
         return redirect()->route('article.index')->with('success', 'Articulo modificado correctamente.');
     }
-    }
+
 
     /**
      * Remove the specified resource from storage.
@@ -91,3 +91,4 @@ class ArticleController extends Controller
 
     }
 }
+
